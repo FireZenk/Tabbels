@@ -29,8 +29,14 @@ The simplest example in pure Java would be to create a function in a new table:
           	return null;
     }.build();
 ```
-Here is another simple case for Android based projects (you need to cast core.Tabbels to android.Tabbels):
+Here is another simple case for Android based projects:
 ```java
+    // In your Application in order to observe the Activity lifecycle
+    Tabbels.register(this);
+```
+
+```java
+    // You need to cast core.Tabbels to android.Tabbels
     final Tabbels λλ = (Tabbels) create(
     ).λ(
     	"onCreate", (self, bundle) -> {
@@ -42,15 +48,21 @@ Here is another simple case for Android based projects (you need to cast core.Ta
         	return null;
     }.build();
 ```
-Like a functional language, you can embed and combine functions using the variable "self":
+Like a functional language, you can embed and combine functions using the variable `self`:
 ```java
     ...
     λ(
     	"sum", (self, i1, i2) -> (Integer) i1 + (Integer) i2
     ).λ(
-    	"sum2", (self, i1, i2) -> self.λ("sum", 2, 4) + 2
+    	"sum2", (self, i1, i2) -> self.λ("sum", self.λ("sum", 2, 4), 6)
     ).build();
 ```
+
+###SOME IMPORTANT THINGS:
+
+- Remenber to call `build()` at the end of the declaration
+- The implementation of Android is coupled with the life cycle of the activities (`Activity` only for now)
+
 ###MORE INFO:
 
 	Go to sample module
