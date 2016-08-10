@@ -7,7 +7,7 @@ Highly inspired by LUA tables, hence the play on the word Table to Tabbel; this 
 ![tabbels_draft](https://cloud.githubusercontent.com/assets/1595403/17554914/9b90f8f4-5f0d-11e6-9721-7a1d3cbb13c5.png)
 
 ###GRADLE:
-
+```groovy
 	repositories {
 	    	...
 	    	maven { url 'https://github.com/FireZenk/maven-repo/raw/master/'}
@@ -17,20 +17,20 @@ Highly inspired by LUA tables, hence the play on the word Table to Tabbel; this 
 			compile 'org.firezenk:tabbels-core:1.0.0' // for java projects
 	        compile 'org.firezenk:tabbels-android:1.0.0@aar' // for android projects
 	}
-
+```
 ###USAGE:
 
 The simplest example in pure Java would be to create a function in a new table:
-
+```java
     final Tabbels λλ = create(
     ).λ(
     	"helloWorld", (self) -> {
         	System.out.println("Hello world!");
           	return null;
     }.build();
-
+```
 Here is another simple case for Android based projects (you need to cast core.Tabbels to android.Tabbels):
-
+```java
     final Tabbels λλ = (Tabbels) create(
     ).λ(
     	"onCreate", (self, bundle) -> {
@@ -41,16 +41,16 @@ Here is another simple case for Android based projects (you need to cast core.Ta
 
         	return null;
     }.build();
-
+```
 Like a functional language, you can embed and combine functions using the variable "self":
-
+```java
     ...
     λ(
     	"sum", (self, i1, i2) -> (Integer) i1 + (Integer) i2
     ).λ(
     	"sum2", (self, i1, i2) -> self.λ("sum", 2, 4) + 2
     ).build();
-
+```
 ###MORE INFO:
 
 	Go to sample module
