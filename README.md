@@ -20,7 +20,36 @@ Highly inspired by LUA tables, hence the play on the word Table to Tabbel; this 
 
 ###USAGE:
 
-    TODO
+The simplest example in pure Java would be to create a function in a new table:
+
+    final Tabbels λλ = create(
+    ).λ(
+    	"helloWorld", (self) -> {
+        	System.out.println("Hello world!");
+          	return null;
+    }.build();
+
+Here is another simple case for Android based projects (you need to cast core.Tabbels to android.Tabbels):
+
+    final Tabbels λλ = (Tabbels) create(
+    ).λ(
+    	"onCreate", (self, bundle) -> {
+        	setContentView(R.layout.main_activity);
+
+        	final TextView tv = (TextView) findViewById(R.id.textView);
+            	tv.setText("Hello world!");
+
+        	return null;
+    }.build();
+
+Like a functional language, you can embed and combine functions using the variable "self":
+
+    ...
+    λ(
+    	"sum", (self, i1, i2) -> (Integer) i1 + (Integer) i2
+    ).λ(
+    	"sum2", (self, i1, i2) -> self.λ("sum", 2, 4) + 2
+    ).build();
 
 ###MORE INFO:
 
