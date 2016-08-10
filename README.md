@@ -2,6 +2,8 @@
 
 A crazy idea about bringing functional programming to Java, in an elegant way
 
+Highly inspired by LUA tables, hence the play on the word Table to Tabbel; this is an attempt to represent this LUA Tables filled with pure functions, which can interact with the ecosystem without having to leave Java.
+
 ![tabbels_draft](https://cloud.githubusercontent.com/assets/1595403/17554914/9b90f8f4-5f0d-11e6-9721-7a1d3cbb13c5.png)
 
 ###GRADLE:
