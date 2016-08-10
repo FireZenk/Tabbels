@@ -60,7 +60,7 @@ Like a functional language, you can embed and combine functions using the variab
 
 ###SOME IMPORTANT THINGS:
 
-- Remenber to call `build()` at the end of the declaration
+- Remember to call `build()` at the end of the declaration
 - The implementation of Android is coupled with the life cycle of the activities (`Activity` only for now)
 
 ###MORE INFO:
