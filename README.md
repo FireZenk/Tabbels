@@ -12,7 +12,8 @@ A crazy idea about bringing functional programming to Java, in an elegant way
 	}
 	dependencies {
 			...
-	        compile 'org.firezenk:tabbels:1.0.0@aar'
+			compile 'org.firezenk:tabbels-core:1.0.0' // for java projects
+	        compile 'org.firezenk:tabbels-android:1.0.0@aar' // for android projects
 	}
 
 ###USAGE:
