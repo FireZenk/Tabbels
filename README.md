@@ -15,8 +15,8 @@ Highly inspired by LUA tables, hence the play on the word Table to Tabbel; this 
 	}
 	dependencies {
 			...
-			compile 'org.firezenk:tabbels-core:1.0.0' // for java projects
-	        compile 'org.firezenk:tabbels-android:1.0.0@aar' // for android projects
+			compile 'org.firezenk:tabbels-core:{last_version}' // for java projects
+	        compile 'org.firezenk:tabbels-android:{last_version}@aar' // for android projects
 	}
 ```
 ###USAGE:
@@ -61,7 +61,7 @@ Like a functional language, you can embed and combine functions using the variab
 ###SOME IMPORTANT THINGS:
 
 - Note the use of `fλ` or `aλ`, `fλ` is a function that returns something while `aλ` has no return value
-- Remenber to call `build()` at the end of the declaration
+- Remember to call `build()` at the end of the declaration
 - The implementation of Android is coupled with the life cycle of the activities (`Activity` only for now)
 
 ###MORE INFO:
