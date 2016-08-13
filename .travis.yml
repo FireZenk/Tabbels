@@ -8,10 +8,10 @@ android:
     # - tools
 
     # The BuildTools version used by your project
-    - build-tools-23.0.3
+    - build-tools-22.0.1
 
     # The SDK version used to compile your project
-    - android-23
+    - android-22
 
     # Additional components
     - extra-google-m2repository
@@ -19,7 +19,7 @@ android:
 
     # Specify at least one system image,
     # if you need to run emulator(s) during your tests
-    - sys-img-x86-android-23
+    - sys-img-x86-android-22
 
 before_cache:
   - rm -f $HOME/.gradle/caches/modules-2/modules-2.lock

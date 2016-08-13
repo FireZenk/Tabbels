@@ -1,11 +1,11 @@
 #Tabbels
-![travis_ci](https://api.travis-ci.org/FireZenk/Tabbels.svg)
+[![Build Status](https://travis-ci.org/FireZenk/Tabbels.svg?branch=develop)](https://travis-ci.org/FireZenk/Tabbels) [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Tabbels-green.svg?style=true)](https://android-arsenal.com/details/1/4128)
 
 A crazy idea about bringing functional programming to Java, in an elegant way
 
 Highly inspired by LUA tables, hence the play on the word Table to Tabbel; this is an attempt to represent this LUA Tables filled with pure functions, which can interact with the ecosystem without having to leave Java.
 
-![tabbels_draft](https://cloud.githubusercontent.com/assets/1595403/17554914/9b90f8f4-5f0d-11e6-9721-7a1d3cbb13c5.png)
+![tabbels_draft2](https://cloud.githubusercontent.com/assets/1595403/17645331/3b17aa2a-61a3-11e6-8b46-9e70c3e3ad59.png)
 
 ###GRADLE:
 ```groovy
