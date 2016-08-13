@@ -1,12 +1,17 @@
 package org.firezenk.tabbels.core;
 
-import java.util.HashMap;
+import org.firezenk.tabbels.core.rx.functions.Action;
+import org.firezenk.tabbels.core.rx.functions.Action1;
+import org.firezenk.tabbels.core.rx.functions.Action2;
+import org.firezenk.tabbels.core.rx.functions.Action3;
+import org.firezenk.tabbels.core.rx.functions.Action4;
+import org.firezenk.tabbels.core.rx.functions.Func1;
+import org.firezenk.tabbels.core.rx.functions.Func2;
+import org.firezenk.tabbels.core.rx.functions.Func3;
+import org.firezenk.tabbels.core.rx.functions.Func4;
+import org.firezenk.tabbels.core.rx.functions.Function;
 
-import rx.functions.Func1;
-import rx.functions.Func2;
-import rx.functions.Func3;
-import rx.functions.Func4;
-import rx.functions.Function;
+import java.util.HashMap;
 
 /**
  * Created by Jorge Garrido Oval, aka firezenk on 10/08/16.
@@ -36,23 +41,51 @@ public class Tabbels {
         return Tabbels.table.containsKey(methodName);
     }
 
-    @SuppressWarnings("unchecked")
-    public void λ(Object key) {
-        ((Func1) Tabbels.table.get(key)).call(this);
+    public boolean isAction(String methodName) {
+        return Tabbels.table.get(methodName) instanceof Action;
+    }
+
+    public boolean isFunction(String methodName) {
+        return !this.isAction(methodName);
     }
 
     @SuppressWarnings("unchecked")
-    public Object λ(Object key, Object param) {
+    public Object fλ(Object key) {
+        return ((Func1) Tabbels.table.get(key)).call(this);
+    }
+
+    @SuppressWarnings("unchecked")
+    public Object fλ(Object key, Object param) {
         return ((Func2) Tabbels.table.get(key)).call(this, param);
     }
 
     @SuppressWarnings("unchecked")
-    public Object λ(Object key, Object param1, Object param2) {
+    public Object fλ(Object key, Object param1, Object param2) {
         return ((Func3) Tabbels.table.get(key)).call(this, param1, param2);
     }
 
     @SuppressWarnings("unchecked")
-    public Object λ(Object key, Object param1, Object param2, Object param3) {
+    public Object fλ(Object key, Object param1, Object param2, Object param3) {
         return ((Func4) Tabbels.table.get(key)).call(this, param1, param2, param3);
+    }
+
+    @SuppressWarnings("unchecked")
+    public void aλ(Object key) {
+        ((Action1) Tabbels.table.get(key)).call(this);
+    }
+
+    @SuppressWarnings("unchecked")
+    public void aλ(Object key, Object param) {
+        ((Action2) Tabbels.table.get(key)).call(this, param);
+    }
+
+    @SuppressWarnings("unchecked")
+    public void aλ(Object key, Object param1, Object param2) {
+        ((Action3) Tabbels.table.get(key)).call(this, param1, param2);
+    }
+
+    @SuppressWarnings("unchecked")
+    public void aλ(Object key, Object param1, Object param2, Object param3) {
+         ((Action4) Tabbels.table.get(key)).call(this, param1, param2, param3);
     }
 }
