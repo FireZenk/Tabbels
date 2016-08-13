@@ -14,24 +14,21 @@ import static org.firezenk.tabbels.android.Tabbels.create;
 public class MainActivity extends AppCompatActivity {
 
     final Tabbels λλ = (Tabbels) create(
-    ).λ(
+    ).aλ(
             "onCreate", (self, bundle) -> {
                 setContentView(R.layout.main_activity);
 
                 final TextView tv = (TextView) findViewById(R.id.textView);
                 if (tv != null)
-                    tv.setText(String.valueOf(self.λ("pow3", self.λ("sum2", 2), 2)));
-
-                return null;
+                    tv.setText(String.valueOf(self.fλ("pow3", self.fλ("sum2", 2), 2)));
             }
-    ).λ(
+    ).aλ(
             "onStart", (self) -> {
                 System.out.println("Hello world!");
-                return null;
             }
-    ).λ(
+    ).fλ(
             "sum2", (self, i1) -> (Integer) i1 + 2
-    ).λ(
+    ).fλ(
             "pow3", (self, i1, i2) -> Math.pow((Integer) i1 * (Integer) i2, 3)
     ).build();
 }
