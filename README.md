@@ -1,4 +1,5 @@
 #Tabbels
+![travis_ci](https://api.travis-ci.org/FireZenk/Tabbels.svg)
 
 A crazy idea about bringing functional programming to Java, in an elegant way
 
