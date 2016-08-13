@@ -23,10 +23,9 @@ Highly inspired by LUA tables, hence the play on the word Table to Tabbel; this 
 The simplest example in pure Java would be to create a function in a new table:
 ```java
     final Tabbels λλ = create(
-    ).λ(
+    ).aλ(
     	"helloWorld", (self) -> {
         	System.out.println("Hello world!");
-          	return null;
     }.build();
 ```
 Here is another simple case for Android based projects:
@@ -38,7 +37,7 @@ Here is another simple case for Android based projects:
 ```java
     // You need to cast core.Tabbels to android.Tabbels
     final Tabbels λλ = (Tabbels) create(
-    ).λ(
+    ).aλ(
     	"onCreate", (self, bundle) -> {
         	setContentView(R.layout.main_activity);
 
@@ -51,21 +50,29 @@ Here is another simple case for Android based projects:
 Like a functional language, you can embed and combine functions using the variable `self`:
 ```java
     ...
-    λ(
+    ).fλ(
     	"sum", (self, i1, i2) -> (Integer) i1 + (Integer) i2
-    ).λ(
-    	"sum2", (self, i1, i2) -> self.λ("sum", self.λ("sum", 2, 4), 6)
+    ).fλ(
+    	"sum2", (self, i1, i2) -> self.fλ("sum", self.fλ("sum", 2, 4), 6)
     ).build();
 ```
 
 ###SOME IMPORTANT THINGS:
 
+- Note the use of `fλ` or `aλ`, `fλ` is a function that returns something while `aλ` has no return value
 - Remenber to call `build()` at the end of the declaration
 - The implementation of Android is coupled with the life cycle of the activities (`Activity` only for now)
 
 ###MORE INFO:
 
 	Go to sample module
+
+###NEW ON LAST VERSION (1.1.0):
+
+- Functions without return (like in rxjava) -> Actions, use them with `aλ`
+- Old `λ` renamed to `fλ` to refrect the usage of Function instead of Action usage
+- Removed rxjava dependecy
+- Adds helper methods `isAction(String methodName)` and `isFunction(String methodName)`
 
 ###LICENSE
 
