@@ -15,8 +15,6 @@
  */
 package org.firezenk.tabbels.core.rx.functions;
 
-import org.firezenk.tabbels.core.rx.Function;
-
 /**
  * Represents a function with three arguments.
  * @param <T1> the first argument type
