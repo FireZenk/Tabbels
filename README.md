@@ -43,9 +43,7 @@ Here is another simple case for Android based projects:
         	setContentView(R.layout.main_activity);
 
         	final TextView tv = (TextView) findViewById(R.id.textView);
-            	tv.setText("Hello world!");
-
-        	return null;
+            tv.setText("Hello world!");
     }.build();
 ```
 Like a functional language, you can embed and combine functions using the variable `self`:

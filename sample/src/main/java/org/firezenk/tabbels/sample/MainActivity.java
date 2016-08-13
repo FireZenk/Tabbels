@@ -23,9 +23,7 @@ public class MainActivity extends AppCompatActivity {
                     tv.setText(String.valueOf(self.fλ("pow3", self.fλ("sum2", 2), 2)));
             }
     ).aλ(
-            "onStart", (self) -> {
-                System.out.println("Hello world!");
-            }
+            "onStart", (self) -> System.out.println("Hello world!")
     ).fλ(
             "sum2", (self, i1) -> (Integer) i1 + 2
     ).fλ(
