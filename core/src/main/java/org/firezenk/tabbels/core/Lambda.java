@@ -62,6 +62,46 @@ public class Lambda implements Function {
         return this;
     }
 
+    public Lambda fλ(Object key, String desc, Func1<Tabbels, Object> pair) {
+        Tabbels.table.put(key, pair);
+        return this;
+    }
+
+    public Lambda fλ(Object key, String desc, Func2<Tabbels, Object, Object> pair) {
+        Tabbels.table.put(key, pair);
+        return this;
+    }
+
+    public Lambda fλ(Object key, String desc, Func3<Tabbels, Object, Object, Object> pair) {
+        Tabbels.table.put(key, pair);
+        return this;
+    }
+
+    public Lambda fλ(Object key, String desc, Func4<Tabbels, Object, Object, Object, Object> pair) {
+        Tabbels.table.put(key, pair);
+        return this;
+    }
+
+    public Lambda aλ(Object key, String desc, Action1<Tabbels> pair) {
+        Tabbels.table.put(key, pair);
+        return this;
+    }
+
+    public Lambda aλ(Object key, String desc, Action2<Tabbels, Object> pair) {
+        Tabbels.table.put(key, pair);
+        return this;
+    }
+
+    public Lambda aλ(Object key, String desc, Action3<Tabbels, Object, Object> pair) {
+        Tabbels.table.put(key, pair);
+        return this;
+    }
+
+    public Lambda aλ(Object key, String desc, Action4<Tabbels, Object, Object, Object> pair) {
+        Tabbels.table.put(key, pair);
+        return this;
+    }
+
     public Tabbels build() {
         return parent;
     }
