@@ -36,8 +36,7 @@ Here is another simple case for Android based projects:
 ```
 
 ```java
-    // You need to cast core.Tabbels to android.Tabbels
-    final Tabbels λλ = (Tabbels) create(
+    final Tabbels λλ = create(
     ).aλ(
     	"onCreate", (self, bundle) -> {
         	setContentView(R.layout.main_activity);
@@ -66,7 +65,13 @@ Like a functional language, you can embed and combine functions using the variab
 
 	Go to sample module
 
-###NEW ON LAST VERSION (1.1.0):
+###NEW ON LAST VERSION (1.2.0):
+
+- Remove the need to cast Tabbels android to Tabbels core (use core directly)
+- Add optional description string on methods for future documentation purposes
+- Option to init _Tabbel_ from another _Tabbel as seed to use their methods transparently
+
+###NEW ON VERSION (1.1.0):
 
 - Functions without return (like in rxjava) -> Actions, use them with `aλ`
 - Old `λ` renamed to `fλ` to refrect the usage of Function instead of Action usage
