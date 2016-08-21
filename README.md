@@ -43,15 +43,28 @@ Here is another simple case for Android based projects:
 
         	final TextView tv = (TextView) findViewById(R.id.textView);
             tv.setText("Hello world!");
-    }.build();
+		}
+    ).build();
 ```
 Like a functional language, you can embed and combine functions using the variable `self`:
 ```java
     ...
+  	...
     ).fλ(
     	"sum", (self, i1, i2) -> (Integer) i1 + (Integer) i2
     ).fλ(
     	"sum2", (self, i1, i2) -> self.fλ("sum", self.fλ("sum", 2, 4), 6)
+    ).build();
+```
+
+###COMPOSITION:
+
+Since version 1.3.0, Tabbels provides the possibility to compose tables from other tables. This is especially useful for applying design patterns in the presentation layer and enhance the functionality of our classes from other, simulating multiple inheritance :
+
+```java
+  ...
+	).inject(
+        new SomePresenter().λλ, new ColorHelper().λλ
     ).build();
 ```
 
@@ -65,18 +78,13 @@ Like a functional language, you can embed and combine functions using the variab
 
 	Go to sample module
 
-###NEW ON LAST VERSION (1.2.0):
+###NEW ON LAST VERSION (1.3.0):
 
-- Remove the need to cast Tabbels android to Tabbels core (use core directly)
-- Add optional description string on methods for future documentation purposes
-- Option to init _Tabbel_ from another _Tabbel as seed to use their methods transparently
+- Interconnect _Tabbels_ using `inject(Tabbels... dependency)`
 
-###NEW ON VERSION (1.1.0):
+###MORE VERSION CHANGES:
 
-- Functions without return (like in rxjava) -> Actions, use them with `aλ`
-- Old `λ` renamed to `fλ` to refrect the usage of Function instead of Action usage
-- Removed rxjava dependecy
-- Adds helper methods `isAction(String methodName)` and `isFunction(String methodName)`
+- [See CHANGES.md](https://github.com/FireZenk/Tabbels/blob/develop/CHANGES.md)
 
 ###LICENSE
 
