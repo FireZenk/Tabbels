@@ -1,9 +1,14 @@
 package org.firezenk.tabbels.sample;
 
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
-import org.firezenk.tabbels.android.Tabbels;
+import org.firezenk.tabbels.core.Tabbels;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 import static org.firezenk.tabbels.android.Tabbels.create;
 
@@ -13,17 +18,28 @@ import static org.firezenk.tabbels.android.Tabbels.create;
  */
 public class MainActivity extends AppCompatActivity {
 
-    final Tabbels λλ = (Tabbels) create(
-    ).aλ(
-            "onCreate", (self, bundle) -> {
-                setContentView(R.layout.main_activity);
+    @BindView(R.id.textView) TextView result;
+    @BindView(R.id.hello) TextView hello;
+    @BindView(R.id.button) Button button;
 
-                final TextView tv = (TextView) findViewById(R.id.textView);
-                if (tv != null)
-                    tv.setText(String.valueOf(self.fλ("pow3", self.fλ("sum2", 2), 2)));
+    final Tabbels λλ = create(MainPresenter.λλ
+    ).aλ(
+            "onCreate",
+            "Overrides onCreate's activity method",
+            (self, bundle) -> {
+                setContentView(R.layout.main_activity);
+                ButterKnife.bind(this);
+                result.setText(String.valueOf(self.fλ("pow3", self.fλ("sum2", 2), 2)));
+                button.setOnClickListener(v -> self.aλ("click"));
             }
     ).aλ(
-            "onStart", (self) -> System.out.println("Hello world!")
+            "onStart",
+            "Overrides onStart's activity method",
+            (self) -> System.out.println("Hello world!")
+    ).aλ(
+            "toggleHello",
+            "Shows or hides the Hello text",
+            (self) -> hello.setVisibility(hello.isShown() ? View.GONE : View.VISIBLE)
     ).fλ(
             "sum2", (self, i1) -> (Integer) i1 + 2
     ).fλ(
