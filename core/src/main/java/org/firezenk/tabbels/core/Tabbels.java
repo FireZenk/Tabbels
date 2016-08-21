@@ -24,9 +24,9 @@ public class Tabbels {
 
     protected static final HashMap<Object, Function> table = new HashMap<>();
 
-    private Tabbels() {}
+    protected Tabbels() {}
 
-    private Tabbels(Tabbels seed) {
+    protected Tabbels(Tabbels seed) {
         table.putAll(seed.table);
     }
 

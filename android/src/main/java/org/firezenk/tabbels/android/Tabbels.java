@@ -10,6 +10,14 @@ import android.os.Bundle;
  */
 public class Tabbels extends org.firezenk.tabbels.core.Tabbels {
 
+    protected Tabbels() {
+        super();
+    }
+
+    protected Tabbels(Tabbels seed) {
+        super(seed);
+    }
+
     public static void register(Application lifecycle) {
         create();
         lifecycle.registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
