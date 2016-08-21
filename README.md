@@ -49,7 +49,6 @@ Here is another simple case for Android based projects:
 Like a functional language, you can embed and combine functions using the variable `self`:
 ```java
     ...
-  	...
     ).fλ(
     	"sum", (self, i1, i2) -> (Integer) i1 + (Integer) i2
     ).fλ(
@@ -62,7 +61,7 @@ Like a functional language, you can embed and combine functions using the variab
 Since version 1.3.0, Tabbels provides the possibility to compose tables from other tables. This is especially useful for applying design patterns in the presentation layer and enhance the functionality of our classes from other, simulating multiple inheritance :
 
 ```java
-  ...
+  	...
 	).inject(
         new SomePresenter().λλ, new ColorHelper().λλ
     ).build();
