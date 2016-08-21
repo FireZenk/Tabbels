@@ -14,10 +14,6 @@ public class Tabbels extends org.firezenk.tabbels.core.Tabbels {
         super();
     }
 
-    protected Tabbels(Tabbels seed) {
-        super(seed);
-    }
-
     public static void register(Application lifecycle) {
         create();
         lifecycle.registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {

@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.hello) TextView hello;
     @BindView(R.id.button) Button button;
 
-    final Tabbels λλ = create(MainPresenter.λλ
+    final Tabbels λλ = create(
     ).aλ(
             "onCreate",
             "Overrides onCreate's activity method",
@@ -44,5 +44,7 @@ public class MainActivity extends AppCompatActivity {
             "sum2", (self, i1) -> (Integer) i1 + 2
     ).fλ(
             "pow3", (self, i1, i2) -> Math.pow((Integer) i1 * (Integer) i2, 3)
+    ).inject(
+            new MainPresenter().λλ
     ).build();
 }

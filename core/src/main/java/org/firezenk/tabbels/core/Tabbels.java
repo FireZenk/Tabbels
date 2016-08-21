@@ -26,10 +26,6 @@ public class Tabbels {
 
     protected Tabbels() {}
 
-    protected Tabbels(Tabbels seed) {
-        table.putAll(seed.table);
-    }
-
     @SuppressWarnings("CloneDoesntCallSuperClone")
     @Override public Object clone() {
         return new Exception("Not allowed");
@@ -41,10 +37,9 @@ public class Tabbels {
         return instance2;
     }
 
-    public static Lambda create(Tabbels seed) {
-        if (instance == null) instance = new Tabbels(seed);
-        if (instance2 == null) instance2 = new Lambda(instance);
-        return instance2;
+    protected void inject(Tabbels... dependency) {
+        for (Tabbels single : dependency)
+            table.putAll(single.table);
     }
 
     public boolean has(String methodName) {

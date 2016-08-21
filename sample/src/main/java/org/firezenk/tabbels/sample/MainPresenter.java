@@ -10,7 +10,7 @@ import static org.firezenk.tabbels.core.Tabbels.create;
  */
 public class MainPresenter {
 
-    final static Tabbels λλ = create(
+    final Tabbels λλ = create(
     ).aλ(
             "click", (self) -> self.aλ("toggleHello")
     ).build();

@@ -102,6 +102,11 @@ public class Lambda implements Function {
         return this;
     }
 
+    public Lambda inject(Tabbels... dependency) {
+        parent.inject(dependency);
+        return this;
+    }
+
     public Tabbels build() {
         return parent;
     }
