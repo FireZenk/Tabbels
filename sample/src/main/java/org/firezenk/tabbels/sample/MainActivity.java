@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 setContentView(R.layout.main_activity);
                 ButterKnife.bind(this);
                 result.setText(String.valueOf(self.fλ("pow3", self.fλ("sum2", 2), 2)));
+                self.aλ("randomColor", result);
                 button.setOnClickListener(v -> self.aλ("click"));
             }
     ).aλ(
@@ -45,6 +46,6 @@ public class MainActivity extends AppCompatActivity {
     ).fλ(
             "pow3", (self, i1, i2) -> Math.pow((Integer) i1 * (Integer) i2, 3)
     ).inject(
-            new MainPresenter().λλ
+            new MainPresenter().λλ, new ColorHelper().λλ
     ).build();
 }
