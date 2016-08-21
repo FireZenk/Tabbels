@@ -4,21 +4,11 @@ import android.app.Activity;
 import android.app.Application;
 import android.os.Bundle;
 
-import org.firezenk.tabbels.core.Lambda;
-
 /**
  * Created by Jorge Garrido Oval, aka firezenk on 08/08/16.
  * Project: Tabbels
  */
 public class Tabbels extends org.firezenk.tabbels.core.Tabbels {
-
-    private Tabbels() {}
-
-    public static Lambda create() {
-        if (instance == null) instance = new Tabbels();
-        if (instance2 == null) instance2 = new Lambda(instance);
-        return instance2;
-    }
 
     public static void register(Application lifecycle) {
         create();
