@@ -24,7 +24,11 @@ public class Tabbels {
 
     protected static final HashMap<Object, Function> table = new HashMap<>();
 
-    protected Tabbels() {}
+    private Tabbels() {}
+
+    private Tabbels(Tabbels seed) {
+        table.putAll(seed.table);
+    }
 
     @SuppressWarnings("CloneDoesntCallSuperClone")
     @Override public Object clone() {
@@ -33,6 +37,12 @@ public class Tabbels {
 
     public static Lambda create() {
         if (instance == null) instance = new Tabbels();
+        if (instance2 == null) instance2 = new Lambda(instance);
+        return instance2;
+    }
+
+    public static Lambda create(Tabbels seed) {
+        if (instance == null) instance = new Tabbels(seed);
         if (instance2 == null) instance2 = new Lambda(instance);
         return instance2;
     }
